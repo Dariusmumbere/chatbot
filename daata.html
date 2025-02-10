@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart AI Chatbot - Your Personal Assistant</title>
+    <meta name="description" content="A modern, AI-powered chatbot designed to provide instant assistance and answer your questions in real-time.">
+    <meta name="keywords" content="AI Chatbot, Smart Assistant, Virtual Chatbot, Personal AI">
+    <meta name="author" content="Your Name">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .chat-container {
+            width: 400px;
+            height: 500px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-box {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .chat-message {
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .user-message {
+            background-color: #4caf50;
+            color: white;
+            margin-left: auto;
+        }
+
+        .bot-message {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        .input-container {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+        }
+
+        #question {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        #send-btn {
+            padding: 10px 15px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        #send-btn:hover {
+            background-color: #45a049;
+        }
+
+        .typing-indicator {
+            font-size: 14px;
+            color: #888;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <h2 style="text-align: center; margin-top: 10px;">MUWOFA AI Chatbot</h2>
+        <p style="text-align: center; font-size: 14px; color: gray;">Ask anything about <span style="color: goldenrod; font-size: larger;">MUWOFA</span> and get instant AI-powered responses.</p>
+        <div class="chat-box" id="chat-box">
+            <!-- Messages will appear here -->
+        </div>
+
+        <div class="input-container">
+            <input type="text" id="question" placeholder="Ask me anything..." />
+            <button id="send-btn" onclick="askQuestion()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const questionInput = document.getElementById('question');
+        const sendButton = document.getElementById('send-btn');
+
+        function displayMessage(message, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('chat-message');
+            messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+            messageDiv.textContent = message;
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function displayTypingIndicator() {
+            const typingIndicator = document.createElement('div');
+            typingIndicator.classList.add('typing-indicator');
+            typingIndicator.id = 'typing-indicator';
+            typingIndicator.textContent = 'Bot is typing...';
+            chatBox.appendChild(typingIndicator);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function askQuestion() {
+            const userQuestion = questionInput.value.trim();
+            if (!userQuestion) return;
+
+            displayMessage(userQuestion, 'user');
+            questionInput.value = '';
+            questionInput.disabled = true;
+
+            displayTypingIndicator();
+
+            fetch('https://genai-coc1.onrender.com/ask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ question: userQuestion })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const answer = data.answer;
+                document.getElementById('typing-indicator').remove();
+                displayMessage(answer, 'bot');
+                questionInput.disabled = false;
+                questionInput.focus();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('typing-indicator').remove();
+                displayMessage('Sorry, I could not answer that right now.', 'bot');
+                questionInput.disabled = false;
+                questionInput.focus();
+            });
+        }
+
+        questionInput.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                askQuestion();
+            }
+        });
+    </script>
+
+</body>
+</html>

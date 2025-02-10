@@ -1,0 +1,157 @@
+{
+  "personal_info": {
+    "name": "Mumbere Darius",
+    "age": 24,
+    "location": {
+      "city": "Kampala",
+      "country": "Uganda"
+    },
+    "skills": [
+      "Python",
+      "Django",
+      "CSS",
+      "HTML",
+      "JavaScript",
+      "React",
+      "MERN Stack"
+    ],
+    "goal": "To become the best full stack developer by 2035 and be worth $100 million by that time.",
+    "freelancing_plan": {
+      "start_date": "March 2024",
+      "initial_clients": "After three months",
+      "earning_estimates": {
+        "first_6_months": "$1,500 to $5,000"
+      },
+      "work_schedule": {
+        "hours_per_day": 4,
+        "work_time": "Morning"
+      }
+    },
+    "projects": [
+      {
+        "name": "Financial Management and Investment App",
+        "status": "Planned",
+        "details": "An app to track expenses, investments, and earnings"
+      },
+      {
+        "name": "Social Media App",
+        "status": "Planned",
+        "technology": "PhoneGap"
+      },
+      {
+        "name": "Diary App",
+        "status": "Planned",
+        "technology": "KivyMD"
+      },
+      {
+        "name": "Windows App for File Transfer",
+        "status": "Planned",
+        "details": "An app to send files to Android offline"
+      }
+    ],
+    "current_learning": [
+      "AI/ML (Throughout 2025)",
+      "MERN Stack"
+    ],
+    "financial_goals": {
+      "net_worth_by_2030": "300 million UGX",
+      "daily_earnings_to_stability": "1,140,000–1,520,000 UGX"
+    }
+  },
+  "organization": {
+    "name": "Mughende Women Farmers Association (MUWOFA)",
+    "founded_year": 1997,
+    "founders": 30,
+    "description": "MUWOFA is a non-profit organization dedicated to empowering vulnerable women in the Kasese district, Uganda. It operates through sustainable agriculture, vocational training, financial inclusion, and social support programs to fight poverty, promote gender equality, and ensure economic independence.",
+    "location": {
+      "address": "P.O.BOX 468 Kinyamaseke 1 Cell, Kinyamaseke North Ward, Kinyamaseke Town Council, Kasese district, Uganda",
+      "region": "Rwenzori Region",
+      "country": "Uganda"
+    },
+    "contact": {
+      "phone": "+256 (0)777308364",
+      "emails": [
+        "mughendewomen@gmail.com",
+        "miria@mughendewomen.org",
+        "admin@mughendewomen.org"
+      ],
+      "social_media": {
+        "facebook": "https://www.facebook.com/mughendewomen",
+        "twitter": "https://twitter.com/mughendewomen",
+        "website": "https://www.mughendewomen.org"
+      }
+    },
+    "vision": "A poverty-free society where women are economically independent and empowered to lead sustainable lives.",
+    "mission": "To engage rural women in sustainable agricultural practices, vocational training, and financial inclusion programs that enhance food security, economic stability, and social well-being.",
+    "aims_and_objectives": [
+      "Promote sustainable agriculture and environmental conservation to increase food security and household income.",
+      "Provide training in vocational skills to create employment opportunities for women and youth.",
+      "Support financial literacy and savings programs to enable women to achieve economic independence.",
+      "Offer social support services to victims of domestic violence, single mothers, and vulnerable girls.",
+      "Raise awareness and educate communities on HIV/AIDS prevention, women’s rights, and gender equality.",
+      "Encourage tree planting and environmental conservation to combat climate change effects.",
+      "Distribute farming tools, seeds, and other agricultural inputs to women farmers.",
+      "Support early childhood education and care for children from vulnerable families.",
+      "Collaborate with local and international organizations to expand MUWOFA’s impact."
+    ],
+    "activities": [
+      {
+        "name": "Sustainable Agriculture Training",
+        "description": "Teaching women organic farming methods, focusing on small-scale horticulture, soil fertility management, and crop diversification. Women learn to grow vitamin-rich vegetables such as cabbage and eggplant."
+      },
+      {
+        "name": "Vocational Skills Training",
+        "description": "Providing women with hands-on training in carpentry, dairy goat breeding, plumbing, beekeeping, fish farming, shoemaking, sewing, soap manufacturing, welding, basket weaving, accounting, catering, electronics, and art and design."
+      },
+      {
+        "name": "Financial Inclusion & Savings",
+        "description": "Running savings and credit programs to help women start and expand small businesses, providing financial education and entrepreneurship training."
+      },
+      {
+        "name": "Women’s Empowerment Programs",
+        "description": "Offering leadership and career development programs, workshops on self-confidence, and advocacy training for women’s rights."
+      },
+      {
+        "name": "Community Health & Social Support",
+        "description": "Providing health awareness programs, support for pregnant teenagers, victims of domestic violence, and early school leavers, and offering free medical checkups and sanitary materials."
+      },
+      {
+        "name": "Environmental Conservation",
+        "description": "Encouraging tree planting, composting, and using sustainable farming techniques to improve soil fertility and reduce climate change effects."
+      }
+    ],
+    "achievements": [
+      "Supplied thousands of women with soap, handwashing utilities, sanitizers, and masks during the COVID-19 pandemic.",
+      "Introduced goat-rearing programs to reduce poverty and malnutrition among women and children.",
+      "Provided farming tools to over 3,000 women in Kinyamaseke to boost agricultural productivity.",
+      "Trained hundreds of vulnerable women in sustainable agriculture, financial literacy, and vocational skills, leading to job creation and economic growth.",
+      "Increased household income through surplus vegetable sales, improving the financial status of women farmers."
+    ],
+    "partners": [
+      {
+        "name": "Marie Schlei Association",
+        "contribution": "Providing financial and technical support for women’s economic empowerment programs, training in composting, and sustainable food production."
+      },
+      {
+        "name": "Local Government of Kasese",
+        "contribution": "Collaborating on agricultural extension services and social development initiatives."
+      },
+      {
+        "name": "International NGOs",
+        "contribution": "Supporting women's education, training, and entrepreneurship initiatives."
+      }
+    ],
+    "impact": {
+      "nutrition": "MUWOFA's programs have improved nutrition by promoting healthy food production and consumption.",
+      "food_security": "Increased agricultural output has led to better food security and reduced hunger in the community.",
+      "economic_independence": "Thousands of women have gained financial stability through vocational training and entrepreneurship programs.",
+      "environmental_sustainability": "Encouraging organic farming and tree planting has helped in regenerating degraded land and maintaining soil fertility.",
+      "social_support": "Providing care and assistance to single mothers, widows, and victims of domestic violence has strengthened social resilience."
+    },
+    "leadership": {
+      "developer": "Mumbere Darius",
+      "secretary": "Kyakimwa Miria"
+    },
+    "message_from_secretary": "The world needs people who are very compassionate. MUWOFA is highly committed to the most vulnerable who need compassion."
+  }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Auth</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        .google-btn {
+            background: #ea4335;
+        }
+
+        .google-btn:hover {
+            background: #c9302c;
+        }
+
+        .logout-btn {
+            background: #dc3545;
+        }
+
+        .logout-btn:hover {
+            background: #c82333;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Enter your email">
+        <input type="password" id="login-password" placeholder="Enter your password">
+        <button onclick="login()">Login</button>
+        <button class="google-btn" onclick="googleSignIn()">Sign in with Google</button>
+    </div>
+
+    <script type="module">
+        // Import Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js";
+
+        // Firebase Config
+        const firebaseConfig = {
+            apiKey: "AIzaSyBuskP0cx804eSnKagvjW_1FKgqNvpSobU",
+            authDomain: "darius-73eaf.firebaseapp.com",
+            projectId: "darius-73eaf",
+            storageBucket: "darius-73eaf.appspot.com",
+            messagingSenderId: "410473914295",
+            appId: "1:410473914295:web:6eaba1fb4073e707715232"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+
+        // Login with email and password
+        window.login = function() {
+            const email = document.getElementById("login-email").value;
+            const password = document.getElementById("login-password").value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    alert("Login Successful!");
+                    window.location.href = "index.html"; // Redirect after login
+                })
+                .catch((error) => {
+                    alert(error.message);
+                });
+        };
+
+        // Google Sign-In
+        window.googleSignIn = function() {
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    alert(`Welcome ${result.user.displayName}!`);
+                    window.location.href = "index.html"; // Redirect after login
+                })
+                .catch((error) => {
+                    alert(error.message);
+                });
+        };
+
+        // Logout function
+        window.logout = function() {
+            signOut(auth)
+                .then(() => {
+                    alert("Logged out successfully!");
+                })
+                .catch((error) => {
+                    alert(error.message);
+                });
+        };
+
+        // Track Authentication State
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log(`Logged in as: ${user.email}`);
+            } else {
+                console.log("No user logged in");
+            }
+        });
+    </script>
+</body>
+</html>
